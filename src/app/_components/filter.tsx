@@ -22,7 +22,7 @@ export default function Filter() {
       name: p.pokemon.name,
       sprite: p.pokemon.sprite,
       types: p.pokemon.types.map((t) => ({ type: { name: t.type.name } })), // Flatten the type structure
-    })) || [];
+    })) ?? [];
   return (
     <div>
       <div className="dropdown dropdown-bottom">
