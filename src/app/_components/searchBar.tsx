@@ -68,9 +68,15 @@ export default function SearchBar() {
           onChange={(e) => setInputValue(e.target.value)}
         />
 
-        <Button className="btn btn-primary m-2" onClick={handleClick}>
+        {/* <Button
+          className="btn m-2 bg-blue-500 text-black" // Change `bg-blue-500` to your desired background color class
+          onClick={handleClick}
+        >
           Search
-        </Button>
+        </Button> */}
+        <button className="btn btn-primary m-2" onClick={handleClick}>
+          Search
+        </button>
       </div>
 
       {isLoading && <p>Loading...</p>}
