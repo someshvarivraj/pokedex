@@ -7,6 +7,15 @@ A Pokedex application built with Next.js, Prisma, tRPC, and TypeScript. This pro
 
 You can try out the live demo of the application at [https://pokedex-hg2p.vercel.app/](https://pokedex-hg2p.vercel.app/).
 
+
+
+## Tech Stack
+
+- **Frontend**: Next.js,tail
+- **Backend**: tRPC, Prisma
+- **Database**: mySQL (deployed on [Aiven](https://aiven.io/))
+- **UI Components**:Tailwind CSS, DaisyUI
+
 ## Features
 
 - Search Pokémon: Enter one or more Pokémon names separated by commas to fetch and display their details.
@@ -23,8 +32,26 @@ You can try out the live demo of the application at [https://pokedex-hg2p.vercel
 - Use the dropdown menu to select a Pokémon type (e.g., "Fire", "Water").
 - The list will automatically update to show only Pokémon of the selected type.
 
+- ## Deployment
+
+- **Frontend**: Deployed on Vercel ([Live Demo](https://pokedex-hg2p.vercel.app/)).
+- **Database**: mySQL hosted on [Aiven](https://aiven.io/).
+
 
 ## Repository
 
 You can find the source code at [https://github.com/someshvarivraj/pokedex](https://github.com/someshvarivraj/pokedex).
+
+
+
+
+
+
+
+
+
+
+
+
+
 
