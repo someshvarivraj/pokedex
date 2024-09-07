@@ -11,7 +11,7 @@ export default function Filter() {
     isLoading,
     isError,
   } = api.pokemon.getPokemonsByTypes.useQuery(
-    { name: selectedType || "" },
+    { name: selectedType ?? "" },
     { enabled: !!selectedType },
   );
   const handleTypeSelect = (type: string) => {
