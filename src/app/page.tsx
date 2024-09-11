@@ -7,7 +7,7 @@ import Filter from "./_components/filter";
 
 export default async function Home() {
   // const hello = await api.post.hello({ text: "from tRPC" });
-  // const data = await api.pokemon.getPokemonByName({ name: "Bulbasaur" });
+  // const data = await api.pokemon.getPokemonByNames({ names: ["Bulbasaur"] });
 
   // void api.post.getLatest.prefetch();
 

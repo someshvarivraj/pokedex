@@ -6,6 +6,7 @@ import { useState } from "react";
 import Pokemons from "./pokemons";
 export default function Filter() {
   const [selectedType, setSelectedType] = useState("");
+  const [selectDropdown, setSelectDropdown] = useState(false);
   const {
     data: pokemonData,
     isLoading,
@@ -14,8 +15,12 @@ export default function Filter() {
     { name: selectedType ?? "None" },
     { enabled: !!selectedType },
   );
+  const handleDropdown = () => {
+    setSelectDropdown(true);
+  };
   const handleTypeSelect = (type: string) => {
     setSelectedType(type);
+    setSelectDropdown(false);
   };
   const transformedPokemons =
     pokemonData?.pokemons.map((p) => ({
@@ -26,29 +31,36 @@ export default function Filter() {
   return (
     <div>
       <div className="dropdown dropdown-bottom">
-        <div tabIndex={0} role="button" className="btn relative m-2">
+        <div
+          tabIndex={0}
+          role="button"
+          onClick={handleDropdown}
+          className="btn relative m-2"
+        >
           <img src="/filter.png" alt="Filter" className="h-6 w-6" />
         </div>
-        <ul
-          tabIndex={0}
-          className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
-        >
-          {[
-            "Grass",
-            "Poison",
-            "Fire",
-            "Flying",
-            "Water",
-            "Bug",
-            "Normal",
-            "Fairy",
-            "🚫None",
-          ].map((type) => (
-            <li key={type}>
-              <a onClick={() => handleTypeSelect(type)}>{type}</a>
-            </li>
-          ))}
-        </ul>
+        {selectDropdown && (
+          <ul
+            tabIndex={0}
+            className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
+          >
+            {[
+              "Grass",
+              "Poison",
+              "Fire",
+              "Flying",
+              "Water",
+              "Bug",
+              "Normal",
+              "Fairy",
+              "🚫None",
+            ].map((type) => (
+              <li key={type}>
+                <a onClick={() => handleTypeSelect(type)}>{type}</a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       {/* Display fetched Pokémon */}
       {isLoading && <p>Loading...</p>}
